@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :nickname, presence: true
+  validates :company, presence: true
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX, message: 'が無効です。文字と数字を含めてください。'
+  validates_format_of :password, with: PASSWORD_REGEX, message: 'が無効です。文字と数字を含めてください。', if: :password_required?
 end
