@@ -1,0 +1,34 @@
+<%= form_with model: @work, class: 'form', local: true do |f| %>
+  <div id="form-main">
+    <div id="form-div">
+        <h2>新規登録</h2>
+        <form class="form" id="form1">
+        <p class="cliant_name">
+            <%= f.text_field :cliant_name, class:"feedback-input", placeholder:"顧客名", id="name" %>
+        </p>
+
+        <p class="job_description">
+            <%= f.text_field :job_description, class:"feedback-input", placeholder:"仕事内容", id="job_description" %>
+        </p>
+
+        <p class="calendar">
+            <%= f.text_field :calendar, class:"feedback-input", placeholder:"日付", id="calendar" %>
+        </p>
+
+        <p class="work_place">
+            <%= f.text_field :work_place, class:"feedback-input", placeholder:"場所", id="work_place" %>
+        </p>
+
+        <p class="price">
+            <%= f.text_field :price, class:"feedback-input", placeholder:"金額", id="price" %>
+        </p>
+
+        <div class="submit">
+            <%= f.submit "SEND", id="button-blue" %>
+            <div class="ease"></div>
+        </div>
+            <%= link_to "戻る", works_path, class: "back" %>
+        </form>
+    </div>
+  </div>
+<% end %>

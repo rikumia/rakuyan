@@ -1,0 +1,20 @@
+<div class="message">
+  <div class="upper-message">
+    <div class="message-user">
+      <div class="col-sm-4">
+      <div class="panel panel-success">
+        <div class="panel-heading"><%= link_to work.calendar, work_path(work.id) %></div>
+        <div class="panel-body">
+          <%= work.cliant_name %>
+          <%= link_to edit_work_path(work.id) do %>
+          <span class="fas fa-edit"></span>
+          <% end %>
+          <%= link_to work_path(work.id), method: :delete do %>
+          <span class="fas fa-trash-alt"></span>
+          <% end %>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

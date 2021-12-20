@@ -1,0 +1,30 @@
+<%= form_with model: @cliant, class: 'form', local: true do |f| %>
+<div class="Form">
+<h1>新規登録</h1>
+<div class="Form-Item">
+<p class="Form-Item-Label">
+<span class="Form-Item-Label-Required">必須</span>顧客名
+</p>
+<%= f.text_field :cliant_name, class:"Form-Item-Input", placeholder:"顧客名" %>
+<%#= f.collection_select(:cliant, :work_id, :Work.all, :id, :cliant_name, {:include_blank => true}) %>
+<%# end %>
+</div>
+<div class="Form-Item">
+<p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>メールアドレス</p>
+<%= f.text_field :email, class:"Form-Item-Input", placeholder:"例）example@gmail.com" %>
+</div>
+<div class="Form-Item">
+<p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>電話番号</p>
+<%= f.text_field :tell, class:"Form-Item-Input", placeholder:"例）000-0000-0000" %>
+</div>
+<div class="Form-Item">
+<p class="Form-Item-Label">FAX</p>
+<%= f.text_field :fax, class:"Form-Item-Input", placeholder:"例）000-0000-0000" %>
+</div>
+<div class="Form-Item">
+<p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>住所</p>
+<%= f.text_area :address, class:"Form-Item-Input", placeholder:"住所" %>
+</div>
+<%= f.submit "登録", class:"Form-Btn" %>
+</div>
+<% end %>

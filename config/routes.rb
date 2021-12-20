@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'cliants/index'
   devise_for :users
-  root to: "works#index"
-  resources :users, only: [:edit, :update]
-  resources :works, omly: [:index]
+  root to: "users#index"
+  resources :users, only: [:index,:edit, :update]
+  resources :works
+  resources :cliants, only: [:index, :new, :create]
 end
