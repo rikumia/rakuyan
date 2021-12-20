@@ -1,0 +1,24 @@
+<h3>Memo list</h3>
+
+
+    <%# @memos.each do |memo| %>
+    <div class="col-sm-4">
+         <div class="panel panel-warning">
+          <div class="panel-heading">
+              <h4><%#= memo.title%></h4>
+              <p><%#= memo.category.name%></p>
+              <div class="buttons">
+              <%
+=begin%>
+ <a href="/memos/<%=memo.id%>" data-method="delete"><span class="glyphicon glyphicon-trash"></span></a>
+              <a href="/memos/<%=memo.id%>/edit"><span class="glyphicon glyphicon-edit"></span></a>
+<%
+=end%>
+              </div>
+          </div>
+          <div class="panel-body">
+            <%#= memo.body%>
+          </div>
+         </div>
+    </div>
+    <%# end %>

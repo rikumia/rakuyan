@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_15_075158) do
+ActiveRecord::Schema.define(version: 2021_12_20_045251) do
+
+  create_table "cliants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "work_id", null: false
+    t.bigint "user_id", null: false
+    t.string "cliant_name", null: false
+    t.string "email", null: false
+    t.string "tell", null: false
+    t.string "fax", null: false
+    t.string "address", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_cliants_on_user_id"
+    t.index ["work_id"], name: "index_cliants_on_work_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "company", null: false
@@ -25,4 +39,19 @@ ActiveRecord::Schema.define(version: 2021_12_15_075158) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "works", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "cliant_name", null: false
+    t.text "job_description", null: false
+    t.date "calendar", null: false
+    t.string "work_place", null: false
+    t.integer "price", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_works_on_user_id"
+  end
+
+  add_foreign_key "cliants", "users"
+  add_foreign_key "cliants", "works"
+  add_foreign_key "works", "users"
 end

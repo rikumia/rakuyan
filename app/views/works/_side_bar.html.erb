@@ -1,0 +1,14 @@
+<div class="side-bar-header">
+  <div class="header-name">
+    <%= link_to current_user.company, root_path %>
+  </div>
+</div>
+
+<div class="rooms">
+    <div class="room">
+      <div class="room-name">
+        <%= link_to "新規作成",  new_work_path %>
+        <%= link_to "仕事一覧",  works_path %>
+      </div>
+    </div>
+</div>
