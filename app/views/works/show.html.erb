@@ -39,12 +39,10 @@
             <h2><%= @work.price %></h2>
           </div>
         </div>
-      <button type="button" class="btn btn-secondary btn-lg">
-      <%= link_to "削除", work_path(@work.id), method: :delete, class:"back" %>
-      </button>
-      <button type="button" class="btn btn-secondary btn-lg">
-      <%= link_to "戻る", works_path, class: "back" %>
-      </button>
+        <div class="btn-btn">
+          <%= button_to "削除", work_path(@work.id), method: :delete, class:"btn btn-secondary btn-lg" %>
+          <%= link_to "戻る", works_path, class:"btn btn-secondary btn-lg" %>
+        </div>
     </div>
   </div>
 </div>

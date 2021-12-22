@@ -1,0 +1,36 @@
+<%= render partial: "cliant", locals: { cliant: @cliant } %>
+<h1>詳細</h1>
+  </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1 class="panel-title">顧客</h1>
+      </div>
+      <div class="panel-body">
+        <h2><%= @cliant.cliant_name %></h2>
+      </div>
+      <div class="panel-heading">
+        <h1 class="panel-title">email</h1>
+      </div>
+      <div class="panel-body">
+        <h2><%= @cliant.email %></h2>
+      </div>
+      <div class="panel-heading">
+        <h1 class="panel-title">電話番号</h1>
+      </div>
+      <div class="panel-body">
+        <h2><%= @cliant.tell %></h2>
+      </div>
+      <div class="panel-heading">
+        <h1 class="panel-title">FAX</h1>
+      </div>
+      <div class="panel-body">
+        <h2><%= @cliant.fax %></h2>
+      </div>
+      <div class="panel-heading">
+        <h1 class="panel-title">住所</h1>
+      </div>
+      <div class="panel-body">
+        <h2><%= @cliant.address %></h2>
+      </div>
+    </div>
+    <%= button_to "削除", cliant_path(@cliant.id), method: :delete, class:"btn btn-secondary btn-lg" %>

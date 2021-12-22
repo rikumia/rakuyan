@@ -1,7 +1,6 @@
 class CreateCliants < ActiveRecord::Migration[6.0]
   def change
     create_table :cliants do |t|
-      t.references :work,         null: false, foreign_key: true
       t.references :user,         null: false, foreign_key: true
       t.string :cliant_name,      null: false
       t.string :email,            null: false

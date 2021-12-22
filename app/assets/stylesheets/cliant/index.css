@@ -1,0 +1,36 @@
+.top-font{
+  font-size: 25px;
+  color: black;
+  text-decoration: none;
+}
+
+.panel-cliant{
+  font-size: 30px;
+  text-decoration: none;
+  color: coral;
+}
+
+.panel-body{
+  font-size: 20px;
+  color: grey;
+}
+
+.panel-font{
+  font-size: 20px;
+  color: dodgerblue;
+  text-decoration: none;
+  margin: 5px 0 0 10px;
+}
+
+.panel-btn{
+  display: flex;
+  align-items: center;
+}
+
+.panel-font-btn{
+  font-size: 20px;
+  margin: 7px 0 0 7px;
+  border: none;
+  background-color: #f2dede;
+  color: dodgerblue;
+}
