@@ -3,13 +3,13 @@
     <div class="message-user">
       <div class="col-sm-4">
       <div class="panel panel-success">
-        <div class="panel-heading"><%= link_to work.calendar, work_path(work.id) %></div>
+        <div class="panel-heading"><%= link_to work.calendar, work_path(work.id), class:"calendar-panel" %></div>
         <div class="panel-body">
           <%= work.cliant_name %>
-          <%= link_to edit_work_path(work.id) do %>
+          <%= link_to edit_work_path(work.id), class:"body-font" do %>
           <span class="fas fa-edit"></span>
           <% end %>
-          <%= link_to work_path(work.id), method: :delete do %>
+          <%= link_to work_path(work.id), method: :delete, data: { confirm: "Are you sure?" }, class:"body-font" do %>
           <span class="fas fa-trash-alt"></span>
           <% end %>
         </div>

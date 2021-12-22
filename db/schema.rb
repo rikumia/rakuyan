@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2021_12_20_045251) do
 
   create_table "cliants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "work_id", null: false
     t.bigint "user_id", null: false
     t.string "cliant_name", null: false
     t.string "email", null: false
@@ -23,7 +22,6 @@ ActiveRecord::Schema.define(version: 2021_12_20_045251) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_cliants_on_user_id"
-    t.index ["work_id"], name: "index_cliants_on_work_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -52,6 +50,5 @@ ActiveRecord::Schema.define(version: 2021_12_20_045251) do
   end
 
   add_foreign_key "cliants", "users"
-  add_foreign_key "cliants", "works"
   add_foreign_key "works", "users"
 end

@@ -1,8 +1,10 @@
 class WorksController < ApplicationController
   before_action :set_work, only: [:edit, :show, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :move_to_index, only: [:edit, :show]
 
   def index
-    @works = Work.all.order('created_at DESC')
+    @works = Work.where(user_id: current_user.id).order('created_at DESC')
   end
 
   def new
@@ -45,5 +47,11 @@ class WorksController < ApplicationController
 
   def set_work
     @work = Work.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in? && current_user.id == @work.user_id
+      redirect_to user_session_path
+    end
   end
 end

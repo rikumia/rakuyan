@@ -1,6 +1,5 @@
 class Cliant < ApplicationRecord
-  belongs_to  :work
-  belongs_to  :user
+  belongs_to  :user, optional: true
 
   validates :cliant_name, presence: true
   validates :email, presence: true
