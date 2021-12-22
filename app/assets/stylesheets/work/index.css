@@ -56,16 +56,6 @@
   line-height: 3;
 }
 
-.room{
-  padding: 20px 0 40px;
-}
-
-.chat-header {
-  height: 100px;
-  padding: 0 40px;
-  display: flex;
-  justify-content: space-between;
-}
 .messages {
   height: calc(100vh - 100px);
   padding: 46px 40px 0;
@@ -73,35 +63,22 @@
   color: gray;
 }
 
-.header-title {
-  color: #333;
-  font-size: 24px;
-  margin-top: 36px;
-}
-
-.header-button {
-  margin-top: 40px;
-}
-
-.header-button a {
-  text-decoration: none;
-  border: 1px solid darkred;
-  color: darkred;
-  padding: 20px;
-}
-
-.messages {
-  margin: 10px 0 0 0;
-  font-size: 15px;
-  color: gray;
-}
-
 .calendar-panel{
   text-decoration: none;
   color: purple;
+  font-size: 15px;
+  word-break: break-all;
 }
 
 .body-font{
   text-decoration: none;
   color: steelblue;
+  margin: 3px 0 0 10px;
+  border: none;
+  background-color: white;
+}
+
+.panel-body{
+  display: flex;
+  align-items: center;
 }

@@ -28,15 +28,13 @@
   <div class="col-sm-4">
         <div class="panel panel-danger">
         <div class="panel-heading">
-          <div class="panel-btn">
           <%= link_to cliant.cliant_name, cliant_path(cliant.id), class:"panel-cliant" %>
             <%= link_to edit_cliant_path(cliant.id), class:"panel-font" do %>
               <span class="fas fa-edit"></span>
             <% end %>
-            <%= button_to cliant_path(cliant.id), method: :delete, class:"panel-font-btn"  do %>
+            <%= button_to cliant_path(cliant.id), method: :delete, class:"panel-font"  do %>
               <span class="fas fa-trash-alt"></span>
             <% end %>
-            </div>
         </div>
         <div class="panel-body">
           <%= cliant.email %>

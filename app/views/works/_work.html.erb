@@ -9,7 +9,7 @@
           <%= link_to edit_work_path(work.id), class:"body-font" do %>
           <span class="fas fa-edit"></span>
           <% end %>
-          <%= link_to work_path(work.id), method: :delete, data: { confirm: "Are you sure?" }, class:"body-font" do %>
+          <%= button_to work_path(work.id), method: :delete, class:"body-font" do %>
           <span class="fas fa-trash-alt"></span>
           <% end %>
         </div>
