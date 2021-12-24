@@ -1,6 +1,6 @@
 <%= render partial: "cliant", locals: { cliant: @cliant } %>
 <%= form_with model: @cliant, class: 'form', local: true do |f| %>
-<%= render 'devise/shared/error_messages', model: f.object %>
+<%= render 'layouts/error_messages', model: f.object %>
 <div class="Form">
   <h1>編集</h1>
     <div class="Form-Item">

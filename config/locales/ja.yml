@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        company: 会社名
+      work:
+        cliant_name: 顧客名
+        job_description: 仕事内容
+        calendar: カレンダー
+        work_place: 場所
+        price: 金額
+      cliant:
+        cliant_name: 顧客名
+        email: Eメール
+        tell: 電話番号
+        address: 住所
+      cost:
+        cliant_name: 顧客名
+        calendar: カレンダー
+        sales: 売り上げ
+        cost: 経費
+        tax: 消費税
+        profit: 利益

@@ -1,6 +1,6 @@
 <%= render partial: "cliant", locals: { cliant: @cliant } %>
 <%= form_with model: @cliant, class: 'form', local: true do |f| %>
-<%= render 'devise/shared/error_messages', model: f.object %>
+<%= render 'layouts/error_messages', model: f.object %>
   <div class="Form">
     <h1>新規登録</h1>
       <div class="Form-Item">
@@ -22,11 +22,11 @@
       </div>
       <div class="Form-Item">
         <p class="Form-Item-Label"><span class="Form-Item-Label-Required-a">必須</span>電話番号</p>
-        <%= f.text_field :tell, class:"Form-Item-Input", placeholder:"例）000-0000-0000" %>
+        <%= f.text_field :tell, class:"Form-Item-Input", placeholder:"例）090-0000-0000" %>
       </div>
       <div class="Form-Item">
         <p class="Form-Item-Label"><span class="Form-Item-Label-Required-a">任意</span>FAX</p>
-        <%= f.text_field :fax, class:"Form-Item-Input", placeholder:"例）000-0000-0000" %>
+        <%= f.text_field :fax, class:"Form-Item-Input", placeholder:"例）090-0000-0000" %>
       </div>
       <div class="Form-Item">
         <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required-a">必須</span>住所</p>

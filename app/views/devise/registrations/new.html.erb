@@ -9,14 +9,6 @@
         <%= devise_error_messages!%>
         <div class='field'>
           <div class='field-label'>
-            <%= f.label :company%>
-          </div>
-          <div class='field-input'>
-            <%= f.text_field :company, autofocus: true%>
-          </div>
-        </div>
-        <div class='field'>
-          <div class='field-label'>
             <%= f.label :email%>
           </div>
           <div class='field-input'>
@@ -38,6 +30,14 @@
           </div>
           <div class='field-input'>
             <%= f.password_field :password_confirmation, autocomplete: "off"%>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :company%>
+          </div>
+          <div class='field-input'>
+            <%= f.text_field :company, autofocus: true%>
           </div>
         </div>
         <div class='actions'>
