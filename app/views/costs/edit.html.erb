@@ -1,0 +1,39 @@
+<%= form_with model: @cost, class: 'form', local: true do |f| %>
+<%= render 'devise/shared/error_messages', model: f.object %>
+  <div class="Form">
+    <h1>修正</h1>
+      <div class="Form-Item">
+        <p class="Form-Item-Label">
+          <span class="Form-Item-Label-Required">必須</span>顧客名
+        </p>
+        <%= f.text_field :cliant_name, class:"Form-Item-Input", placeholder:"顧客名", list:"kenpo" %>
+        <datalist id="kenpo">
+        <option value="">顧客</option>
+          <% Work.all.each do |work| %>
+            <option><%= work.cliant_name %></option>
+          <% end %>
+        </datalist>
+      </div>
+      <div class="Form-Item">
+        <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>日付</p>
+        <%= f.date_field :calendar, class:"Form-Item-Input" %>
+      </div>
+      <div class="Form-Item">
+        <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>売り上げ</p>
+        <%= f.text_field :sales, class:"Form-Item-Input", placeholder:"1000" %>
+      </div>
+      <div class="Form-Item">
+        <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>経費</p>
+        <%= f.text_field :cost, class:"Form-Item-Input", placeholder:"1000" %>
+      </div>
+      <div class="Form-Item">
+        <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>消費税</p>
+        <%= f.text_field :tax, class:"Form-Item-Input", placeholder:"0.1" %>
+      </div>
+      <div class="Form-Item">
+        <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>利益</p>
+        <%= f.text_field :profit, class:"Form-Item-Input" %>
+      </div>
+        <%= f.submit "登録", class:"Form-Btn" %>
+  </div>
+<% end %>

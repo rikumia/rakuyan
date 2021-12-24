@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_20_045251) do
+ActiveRecord::Schema.define(version: 2021_12_22_114049) do
 
   create_table "cliants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(version: 2021_12_20_045251) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_cliants_on_user_id"
+  end
+
+  create_table "costs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "cliant_name", null: false
+    t.date "calendar", null: false
+    t.integer "sales", null: false
+    t.integer "cost", null: false
+    t.integer "tax", null: false
+    t.integer "profit", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_costs_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -50,5 +63,6 @@ ActiveRecord::Schema.define(version: 2021_12_20_045251) do
   end
 
   add_foreign_key "cliants", "users"
+  add_foreign_key "costs", "users"
   add_foreign_key "works", "users"
 end

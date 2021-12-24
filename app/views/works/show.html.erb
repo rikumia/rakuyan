@@ -12,7 +12,7 @@
             <h1 class="panel-title">顧客</h1>
           </div>
           <div class="panel-body">
-            <h2><%= @work.cliant_name %></h2>
+            <h2><%= link_to @work.cliant_name, new_cost_path, class:"panel-cost"  %></h2>
           </div>
           <div class="panel-heading">
             <h1 class="panel-title">仕事内容</h1>
@@ -41,7 +41,7 @@
         </div>
         <div class="btn-btn">
           <%= button_to "削除", work_path(@work.id), method: :delete, class:"btn btn-secondary btn-lg" %>
-          <%= link_to "戻る", works_path, class:"btn btn-secondary btn-lg" %>
+          <%= link_to "戻る", works_path, class:"btn-secondary-a" %>
         </div>
     </div>
   </div>

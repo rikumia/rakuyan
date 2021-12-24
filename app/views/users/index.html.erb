@@ -48,7 +48,7 @@
 <!-- Begin page content -->
 <main class="flex-shrink-0">
   <div class="container">
-    <table>
+    <table class="table-b">
         <tr>
           <td><%= link_to edit_user_path(current_user) do %>
           <span class="fas fa-user-edit size"></span>
@@ -62,9 +62,9 @@
         <th>管理</th>
         </tr>
     </table>
-    <table>
+    <table class="table-b">
         <tr>
-          <th><%= link_to works_path do %>
+          <th><%= link_to costs_path do %>
           <span class="fas fa-chart-line size"></span>
           <% end %></th>
           <th><%= link_to cliants_index_path do %>

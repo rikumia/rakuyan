@@ -3,6 +3,17 @@
   margin-left: 10px;
 }
 
-.btn-secondary{
-  margin-left: 10px;
+.btn-secondary-a{
+  font-size: 20px;
+  color: white;
+  background-color: #6c757d;
+  text-decoration: none;
+  margin-left: 15px;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+}
+
+.panel-cost{
+  color: #6c757d;
+  text-decoration: none;
 }
