@@ -8,7 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
-import "../dashboard.js";
+// import "../dashboard.js";
 import "bootstrap";
 import "../stylesheets/application";
 import '@fortawesome/fontawesome-free/js/all';

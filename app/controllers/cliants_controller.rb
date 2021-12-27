@@ -9,13 +9,12 @@ class CliantsController < ApplicationController
 
   def new
     @cliant = Cliant.new
-    @works = Work.all
   end
 
   def create
     @cliant = Cliant.new(cliant_params)
    if @cliant.save
-    redirect_to cliants_index_path
+    redirect_to cliants_path
    elsif
     render :new
    end
@@ -29,7 +28,7 @@ class CliantsController < ApplicationController
 
   def update
     if @cliant.update(cliant_params)
-      redirect_to cliants_index_path
+      redirect_to cliants_path
     else
       render :edit
     end
@@ -37,7 +36,7 @@ class CliantsController < ApplicationController
 
   def destroy
     @cliant.destroy
-    redirect_to cliants_index_path
+    redirect_to cliants_path
   end
 
   private

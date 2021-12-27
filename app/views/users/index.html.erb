@@ -13,8 +13,7 @@
 
 
     <!-- Bootstrap core CSS -->
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <%= stylesheet_link_tag 'application', media: 'all'%>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -67,7 +66,7 @@
           <th><%= link_to costs_path do %>
           <span class="fas fa-chart-line size"></span>
           <% end %></th>
-          <th><%= link_to cliants_index_path do %>
+          <th><%= link_to cliants_path do %>
           <span class="fas fa-user-alt size"></span>
           <% end %></th>
         </tr>

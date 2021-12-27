@@ -4,13 +4,13 @@
   <div class="Form">
     <h1>新規登録</h1>
       <div class="Form-Item">
-      <%#= render 'shared/error_messages', model: f.object %>
         <p class="Form-Item-Label">
           <span class="Form-Item-Label-Required-a">必須</span>顧客名
         </p>
         <%= f.text_field :cliant_name, class:"Form-Item-Input", placeholder:"顧客名", list:"kenpo" %>
         <datalist id="kenpo">
         <option value="">顧客</option>
+
           <% Work.all.each do |work| %>
             <option><%= work.cliant_name %></option>
           <% end %>
