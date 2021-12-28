@@ -20,20 +20,20 @@
       </div>
       <div class="Form-Item">
         <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>売り上げ</p>
-        <%= f.text_field :sales, class:"Form-Item-Input", placeholder:"1000" %>
+        <%= f.text_field :sales, class:"Form-Item-Input", id:"sales-cost", placeholder:"1000" %>
       </div>
       <div class="Form-Item">
         <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>経費</p>
-        <%= f.text_field :cost, class:"Form-Item-Input", placeholder:"1000" %>
+        <%= f.text_field :cost, class:"Form-Item-Input", id:"cost-cost", placeholder:"1000" %>
       </div>
       <div class="Form-Item">
         <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>消費税</p>
-        <%= f.text_field :tax, class:"Form-Item-Input", placeholder:"0.1" %>
+        <%= f.text_field :tax, class:"Form-Item-Input", id:"cost-tax", placeholder:"消費税10%"  %>
       </div>
       <div class="Form-Item">
         <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>利益</p>
-        <%= f.text_field :profit, class:"Form-Item-Input" %>
+        <%= f.text_field :profit, class:"Form-Item-Input", id:"cost-profit" %>
       </div>
-        <%= f.submit "登録", class:"Form-Btn" %>
+        <%= f.submit "登録", class:"Form-Btn", id:"btn" %>
   </div>
 <% end %>

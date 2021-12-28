@@ -1,0 +1,90 @@
+<body>
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</header>
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <%= link_to "HOME", root_path, class:"nav-link active" %>
+              <span data-feather="home"></span>
+          </li>
+          <li class="nav-item">
+            <%= link_to "管理", works_path, class:"nav-link" %>
+              <span data-feather="file"></span>
+          </li>
+          <li class="nav-item">
+            <%= link_to "顧客", cliants_path, class:"nav-link" %>
+              <span data-feather="shopping-cart"></span>
+          </li>
+          <li class="nav-item">
+            <%= link_to "登録", new_cost_path, class:"nav-link" %>
+              <span data-feather="shopping-cart"></span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Customers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Integrations
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2"><%= current_user.company %></h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar"></span>
+             week
+          </button>
+        </div>
+      </div>
+      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+      <h2>業績</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">日にち</th>
+              <th scope="col">顧客名</th>
+              <th scope="col">売り上げ</th>
+              <th scope="col">経費</th>
+              <th scope="col">消費税</th>
+              <th scope="col">利益</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @costs.each do |cost| %>
+            <tr>
+              <td><%= link_to cost.calendar, edit_cost_path(cost.id), class:"tb-calendar" %></td>
+              <td><%= cost.cliant_name %></td>
+              <td><%= cost.sales %></td>
+              <td><%= cost.cost %></td>
+              <td><%= cost.tax %></td>
+              <td><%= cost.profit %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+</body>

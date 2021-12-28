@@ -8,8 +8,10 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
-// import "../dashboard.js";
+require("../cost.js");
+import "../stylesheets/dashboard.js";
 import "bootstrap";
+import "../stylesheets/application";
 import "../stylesheets/application";
 import '@fortawesome/fontawesome-free/js/all';
 
