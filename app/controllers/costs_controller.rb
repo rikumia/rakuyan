@@ -1,10 +1,10 @@
 class CostsController < ApplicationController
   before_action :set_cost, only: [:edit, :update]
   before_action :authenticate_user!
-  # before_action :move_to_index, only: [:index, :edit, :show]
+  before_action :move_to_index, only: [:edit, :show]
 
   def index
-    @costs = Cost.where(user_id: current_user.id).order('created_at DESC')
+    @costs = Cost.all.order('created_at DESC')
   end
 
   def new
@@ -41,9 +41,9 @@ class CostsController < ApplicationController
     @cost = Cost.find(params[:id])
   end
 
-  # def move_to_index
-  #   unless user_signed_in? && current_user.id == @cost.user_id
-  #     redirect_to user_session_path
-  #   end
-  # end
+  def move_to_index
+    unless user_signed_in? && current_user.id == @cost.user_id
+      redirect_to user_session_path
+    end
+  end
 end

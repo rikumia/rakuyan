@@ -9,7 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 require("../cost.js");
-import "../stylesheets/dashboard.js";
+
 import "bootstrap";
 import "../stylesheets/application";
 import "../stylesheets/application";
