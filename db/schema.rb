@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2021_12_22_114049) do
     t.date "calendar", null: false
     t.integer "sales", null: false
     t.integer "cost", null: false
-    t.integer "tax", null: false
     t.integer "profit", null: false
+    t.integer "profit_rate", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_costs_on_user_id"

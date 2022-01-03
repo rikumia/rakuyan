@@ -1,7 +1,7 @@
 <%= form_with model: @cost, class: 'form', local: true do |f| %>
 <%= render 'layouts/error_messages', model: f.object %>
   <div class="Form">
-    <h1>修正</h1>
+    <h1><%= link_to "修正", costs_path, class:"form-cost" %></h1>
       <div class="Form-Item">
         <p class="Form-Item-Label">
           <span class="Form-Item-Label-Required">必須</span>顧客名
@@ -20,19 +20,19 @@
       </div>
       <div class="Form-Item">
         <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>売り上げ</p>
-        <%= f.text_field :sales, class:"Form-Item-Input", placeholder:"1000" %>
+        <%= f.text_field :sales, class:"Form-Item-Input", id:"sales-cost", placeholder:"1000" %>
       </div>
       <div class="Form-Item">
         <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>経費</p>
-        <%= f.text_field :cost, class:"Form-Item-Input", placeholder:"1000" %>
-      </div>
-      <div class="Form-Item">
-        <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>消費税</p>
-        <%= f.text_field :tax, class:"Form-Item-Input", placeholder:"0.1" %>
+        <%= f.text_field :cost, class:"Form-Item-Input", id:"cost-cost", placeholder:"1000" %>
       </div>
       <div class="Form-Item">
         <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>利益</p>
-        <%= f.text_field :profit, class:"Form-Item-Input" %>
+        <%= f.text_field :profit, class:"Form-Item-Input", id:"cost-profit", readonly: true %>
+      </div>
+      <div class="Form-Item">
+        <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>利益率</p>
+        <%= f.text_field :profit_rate, class:"Form-Item-Input", id:"cost-tax", readonly: true  %>
       </div>
         <%= f.submit "登録", class:"Form-Btn" %>
   </div>

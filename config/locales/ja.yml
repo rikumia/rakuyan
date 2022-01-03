@@ -19,5 +19,5 @@ ja:
         calendar: カレンダー
         sales: 売り上げ
         cost: 経費
-        tax: 消費税
         profit: 利益
+        profit_rate: 利益率

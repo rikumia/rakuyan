@@ -6,8 +6,8 @@ class CreateCosts < ActiveRecord::Migration[6.0]
       t.date :calendar,           null: false
       t.integer :sales,           null: false
       t.integer :cost,            null: false
-      t.integer :tax,             null: false
       t.integer :profit,          null: false
+      t.integer :profit_rate,             null: false
       t.timestamps
     end
   end

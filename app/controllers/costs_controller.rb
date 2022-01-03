@@ -5,6 +5,9 @@ class CostsController < ApplicationController
 
   def index
     @costs = Cost.all.order('created_at DESC')
+    @cost_by_day = @costs.group_by_day(:calendar).sum(:sales)
+    @chartlabels = @cost_by_day.map(&:first).to_json.html_safe
+    @chartdatas = @cost_by_day.map(&:second)
   end
 
   def new
@@ -34,7 +37,7 @@ class CostsController < ApplicationController
   private
 
   def cost_params
-    params.require(:cost).permit(:cliant_name, :calendar, :sales, :cost, :tax, :profit).merge(user_id: current_user.id)
+    params.require(:cost).permit(:cliant_name, :calendar, :sales, :cost, :profit, :profit_rate).merge(user_id: current_user.id)
   end
 
   def set_cost
