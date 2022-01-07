@@ -50,6 +50,9 @@
           <li class="nav-item">
             <%= link_to "登録", new_cost_path, class:"nav-link" %>
           </li>
+          <li class="nav-item">
+            <%= link_to "見積書",  cost_pdfs_path, target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+          </li>
           <%
 =begin%>
  <li class="nav-item">
@@ -76,10 +79,14 @@
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2"><%= current_user.company %></h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+          <%
+=begin%>
+ <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
              年間
           </button>
+<%
+=end%>
         </div>
       </div>
       <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>

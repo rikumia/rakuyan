@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_22_114049) do
+ActiveRecord::Schema.define(version: 2022_01_07_015223) do
 
   create_table "cliants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -22,6 +22,33 @@ ActiveRecord::Schema.define(version: 2021_12_22_114049) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_cliants_on_user_id"
+  end
+
+  create_table "cost_pdfs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "cliant_name", null: false
+    t.integer "postal_code", null: false
+    t.string "address", null: false
+    t.string "comoany_name", null: false
+    t.string "tell", null: false
+    t.string "fax", null: false
+    t.string "vdelivery_date", null: false
+    t.string "delivery_location", null: false
+    t.string "payment_terms", null: false
+    t.string "expiration_date", null: false
+    t.string "product_name", null: false
+    t.integer "quantity", null: false
+    t.integer "unit", null: false
+    t.integer "unit_price", null: false
+    t.integer "money", null: false
+    t.string "remarks", null: false
+    t.integer "subtotal", null: false
+    t.integer "tax", null: false
+    t.integer "total", null: false
+    t.string "memo", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_cost_pdfs_on_user_id"
   end
 
   create_table "costs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -63,6 +90,7 @@ ActiveRecord::Schema.define(version: 2021_12_22_114049) do
   end
 
   add_foreign_key "cliants", "users"
+  add_foreign_key "cost_pdfs", "users"
   add_foreign_key "costs", "users"
   add_foreign_key "works", "users"
 end

@@ -12,4 +12,5 @@ class User < ApplicationRecord
   has_many  :works, dependent: :destroy
   has_many :cliants, dependent: :destroy
   has_many :costs, dependent: :destroy
+  has_many :cost_pdfs, dependent: :destroy
 end

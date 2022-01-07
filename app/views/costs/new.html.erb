@@ -9,7 +9,7 @@
         <%= f.text_field :cliant_name, class:"Form-Item-Input", placeholder:"顧客名", list:"kenpo" %>
         <datalist id="kenpo">
         <option value="">顧客</option>
-          <% Work.all.each do |work| %>
+          <% Work.where(user_id: current_user.id).each do |work| %>
             <option><%= work.cliant_name %></option>
           <% end %>
         </datalist>

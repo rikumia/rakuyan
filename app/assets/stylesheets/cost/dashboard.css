@@ -82,9 +82,7 @@ body {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
-.collapse:not(.show){
-  height: 100vh;
-}
+
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled){
   font-size: 20px;
 }

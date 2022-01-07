@@ -13,6 +13,7 @@
 
 - has_many  :works
 - has_many  :cliants
+- has_many  :cost_pdfs
 
 ## worksテーブル
 
@@ -61,3 +62,33 @@
 
 - belongs_to  :work
 - belongs_to  :user
+
+## cost_pdfテーブル
+
+ | Column            | Type       | Options                        |
+ |-------------------| ---------- | ------------------------------ |
+ | user_id           | references | null: false, foreign_key: true |
+ | cliant_name       | string     | null: false                    |
+ | postal_code       | integer    | null: false                    |
+ | address           | string     | null: false                    |
+ | comoany_name      | string     | null: false                    |
+ | tell              | string     | null: false                    |
+ | fax               | string     | null: false                    |
+ | delivery_date     | string     | null: false                    |
+ | delivery_location | string     | null: false                    |
+ | payment_terms     | string     | null: false                    |
+ | expiration_date   | string     | null: false                    |
+ | product_name      | string     | null: false                    |
+ | quantity          | integer    | null: false                    |
+ | unit              | integer    | null: false                    |
+ | unit_price        | integer    | null: false                    |
+ | money             | integer    | null: false                    |
+ | remarks           | string     | null: false                    |
+ | subtotal          | integer    | null: false                    |
+ | tax               | integer    | null: false                    |
+ | total             | integer    | null: false                    |
+ | remarks           | string     | null: false                    |
+
+  ### Association
+
+  - belongs_to  :user
