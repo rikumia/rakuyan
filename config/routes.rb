@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :works
   resources :cliants
   resources :costs, only: [:index, :new, :create, :edit, :update]
-  resources :cost_pdfs, only: :index do
+  resources :cost_pdfs, only: [:index, :new, :create, :edit, :update, :destroy] do
     collection do
       get 'prawn'
     end

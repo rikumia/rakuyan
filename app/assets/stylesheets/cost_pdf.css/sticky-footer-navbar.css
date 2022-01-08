@@ -18,3 +18,9 @@ main > .container {
 code {
   font-size: 80%;
 }
+
+.panel-pdf{
+  color: crimson;
+  text-decoration: none;
+  font-size: 29px;
+}

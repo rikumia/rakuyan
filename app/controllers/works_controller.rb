@@ -21,8 +21,6 @@ class WorksController < ApplicationController
   end
 
   def show
-    # @cliant = Cliant.new
-    # @cliant = @work.cliant.includes(:user)
   end
 
   def destroy

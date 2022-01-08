@@ -1,4 +1,7 @@
 ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
   activerecord:
     attributes:
       user:
@@ -21,3 +24,13 @@ ja:
         cost: 経費
         profit: 利益
         profit_rate: 利益率
+      cost_pdf:
+        company_name: 会社名
+        postal_code: 郵便番号
+        address: 住所
+        tell: 電話番号
+        cliant_name: 顧客名
+        product_name: 品名
+        subtotal: 小計
+        tax: 消費税
+        total: 合計
