@@ -34,3 +34,6 @@ ja:
         subtotal: 小計
         tax: 消費税
         total: 合計
+      cost_pdf/quotations:
+        product_name: 品名
+        money: 金額

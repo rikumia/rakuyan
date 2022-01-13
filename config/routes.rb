@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :cliants
   resources :costs, only: [:index, :new, :create, :edit, :update]
   resources :cost_pdfs, only: [:index, :new, :create, :edit, :update, :destroy] do
-    collection do
+    member do
       get 'prawn'
     end
   end

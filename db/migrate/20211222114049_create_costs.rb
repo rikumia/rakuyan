@@ -7,7 +7,7 @@ class CreateCosts < ActiveRecord::Migration[6.0]
       t.integer :sales,           null: false
       t.integer :cost,            null: false
       t.integer :profit,          null: false
-      t.integer :profit_rate,             null: false
+      t.integer :profit_rate,     null: false
       t.timestamps
     end
   end

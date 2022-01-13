@@ -1,0 +1,23 @@
+<div class="nested-fields">
+  <div class="form-block" id="form_block[0]">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="familyName">品名</label>
+          <%= f.text_field :product_name, class:"form-control",  placeholder:"必須" %>
+          <label for="familyName">数量</label>
+          <%= f.text_field :quantity, class:"form-control", placeholder:"任意" %>
+          <label for="givenName">単位</label>
+          <%= f.text_field :unit, class:"form-control", placeholder:"任意" %>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="givenName">単価</label>
+        <%= f.text_field :unit_price, class:"form-control", placeholder:"任意" %>
+        <label for="givenName">金額</label>
+        <%= f.text_field :money, class:"form-control", id:"money-cost[0]", placeholder:"必須" %>
+        <label for="familyName">備考</label>
+        <%= f.text_field :remarks, class:"form-control", placeholder:"任意" %>
+      </div>
+    </div>
+        <%= link_to_remove_association "削除", f %>
+  </div>
+ </div>

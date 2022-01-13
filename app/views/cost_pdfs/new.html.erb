@@ -65,7 +65,7 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="familyName">受渡期日</label>
-              <%= f.date_field :delivery_date, class:"form-control", placeholder:"任意" %>
+              <%= f.date_field :delivery_date, class:"form-control", value:"", placeholder:"任意" %>
               <label for="familyName">納入場所</label>
               <%= f.text_field :delivery_location, class:"form-control", placeholder:"任意" %>
             </div>
@@ -74,6 +74,29 @@
               <%= f.text_field :payment_terms, class:"form-control", placeholder:"任意" %>
               <label for="givenName">有効期限</label>
               <%= f.date_field :expiration_date, class:"form-control", placeholder:"任意" %>
+            </div>
+          </div>
+          <div class="mx-auto">
+            <%= f.fields_for :quotations do |f| %>
+              <%= render "quotation_fields", f: f %>
+            <% end %>
+          </div>
+          <div id="detail-association-insertion-point"></div>
+          <div class="mt-2">
+          <%= link_to_add_association "追加", f, :quotations %>
+          </div>
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="familyName">小計</label>
+              <%= f.text_field :subtotal, class:"form-control", id:"subtotal-cost", placeholder:"必須" %>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="givenName">消費税</label>
+              <%= f.text_field :tax, class:"form-control", id:"tax-cost", placeholder:"必須" %>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="givenName">合計</label>
+              <%= f.text_field :total, class:"form-control", id:"total-cost", placeholder:"必須" %>
             </div>
           </div>
           <div class="row">
@@ -86,37 +109,11 @@
                     <option><%= work.cliant_name %></option>
                   <% end %>
                 </datalist>
-              <label for="familyName">品名</label>
-              <%= f.text_field :product_name, class:"form-control", placeholder:"必須" %>
-              <label for="familyName">数量</label>
-              <%= f.text_field :quantity, class:"form-control", placeholder:"任意" %>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="givenName">単位</label>
-              <%= f.text_field :unit, class:"form-control", placeholder:"任意" %>
-              <label for="givenName">単価</label>
-              <%= f.text_field :unit_price, class:"form-control", placeholder:"任意" %>
-              <label for="givenName">金額</label>
-              <%= f.text_field :money, class:"form-control", placeholder:"必須" %>
+              <label for="address">備考</label>
+              <%= f.text_area :memo, class:"form-control", placeholder:"任意" %>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="familyName">備考</label>
-              <%= f.text_field :remarks, class:"form-control", placeholder:"任意" %>
-              <label for="familyName">小計</label>
-              <%= f.text_field :subtotal, class:"form-control", placeholder:"必須" %>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="givenName">消費税</label>
-              <%= f.text_field :tax, class:"form-control", placeholder:"必須" %>
-              <label for="givenName">合計</label>
-              <%= f.text_field :total, class:"form-control", placeholder:"必須", id:"givenName" %>
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="address">備考</label>
-            <%= f.text_area :memo, class:"form-control", placeholder:"任意" %>
           </div>
           <hr class="mb-4">
           <%= f.submit "作成", class:"btn btn-primary btn-lg btn-block" %>

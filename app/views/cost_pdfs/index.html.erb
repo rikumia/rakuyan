@@ -1,65 +1,85 @@
----
-layout: examples
-title: Sticky Footer Navbar Template
-extra_css: "sticky-footer-navbar.css"
-html_class: "h-100"
-body_class: "d-flex flex-column h-100"
----
-
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Sticky Footer Navbar Template · Bootstrap v5.0</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sticky-footer-navbar/">
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer-navbar.css" rel="stylesheet">
+  </head>
+  <body class="d-flex flex-column h-100">
 <header>
   <!-- Fixed navbar -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <%= link_to current_user.company, root_path, class:"navbar-brand" %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <span class="sr-only">(current)</span>
-          <%= link_to "管理", works_path, class:"nav-link active" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "顧客", cliants_path, class:"nav-link active" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "売上", costs_path, class:"nav-link active" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "作成", new_cost_pdf_path, class:"nav-link active" %>
-        </li>
-      </ul>
+    <div class="container-fluid">
+      <%= link_to current_user.company, root_path, class:"navbar-brand" %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <%= link_to "管理", works_path, class:"nav-link active" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "顧客", cliants_path, class:"nav-link active" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "売上", costs_path, class:"nav-link active" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "作成",  new_cost_pdf_path, class:"nav-link active" %>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 </header>
-
 <!-- Begin page content -->
-<main role="main" class="flex-shrink-0">
+<main class="flex-shrink-0">
   <div class="container">
-
- <h1 class="mt-5"></h1>
-    <p class="lead"></p>
-
-  </div>
-  <% @cost_pdfs.each do |cost_pdf| %>
-  <div class="col-sm-4">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= l cost_pdf.created_at, class:"calendar-panel" %></h3>
-      </div>
-      <div class="panel-body">
-        <%= cost_pdf.cliant_name %>
+    <h1 class="mt-5"></h1>
+    <h1>見積書リスト</h1>
+      <% @cost_pdfs.each do |cost_pdf| %>
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading"><%= l cost_pdf.created_at %></div>
+          <div class="panel-body">
+            <%= cost_pdf.cliant_name %>
           <%= link_to edit_cost_pdf_path(cost_pdf.id), class:"body-font" do %>
-            <span class="fas fa-edit"></span>
+          <span class="fas fa-edit"></span>
           <% end %>
-          <%= link_to cost_pdf_path(cost_pdf.id), method: :delete, data: { confirm: "【確認】削除してもよろしいですか？" }, class:"body-font" do %>
+          <%= link_to cost_pdf_path(cost_pdf.id), method: :delete, data: {confirm: "削除しますか？"}, class:"body-font" do %>
           <span class="fas fa-trash-alt"></span>
           <% end %>
-          <%= link_to prawn_cost_pdfs_path(format: "pdf"), target:"_blank", rel:"noopnener",  class:"body-font" do %>
+          <%= link_to prawn_cost_pdf_path(cost_pdf.id, format: "pdf"), class:"body-font", target: :_blank, rel: "noopener noreferrer" do %>
           <span class="far fa-file-pdf"></span>
           <% end %>
+          </div>
+        </div>
       </div>
-    </div>
+      <% end %>
   </div>
-  <% end %>
 </main>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

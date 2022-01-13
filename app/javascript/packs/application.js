@@ -9,12 +9,14 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 require("../cost.js");
+require("../cost_pdf");
 require("chartkick")
 require("chart.js")
 import "bootstrap";
 import "../stylesheets/application";
 import "../stylesheets/application";
 import '@fortawesome/fontawesome-free/js/all';
+import "cocoon"
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
