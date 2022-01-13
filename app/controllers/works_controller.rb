@@ -5,6 +5,8 @@ class WorksController < ApplicationController
 
   def index
     @works = Work.where(user_id: current_user.id).order('created_at DESC')
+    @search = Work.ransack(params[:q])
+    @works = @search.result(distinct: true)
   end
 
   def new

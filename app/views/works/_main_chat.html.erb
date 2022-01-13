@@ -1,4 +1,10 @@
 <div class="messages">
+<div class="main-search">
   <h1>タスク</h1>
+  <%= search_form_for @search do |f| %>
+      <%= f.date_field :calendar_cont, class:"search-main" %>
+      <%= f.submit class:"search-btn" %>
+  <% end %>
+</div>
   <%= render partial: 'work', collection: @works %>
 </div>

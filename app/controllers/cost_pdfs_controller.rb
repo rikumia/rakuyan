@@ -5,6 +5,8 @@ class CostPdfsController < ApplicationController
 
   def index
     @cost_pdfs = CostPdf.where(user_id: current_user.id).order('created_at DESC')
+    @search_cost = CostPdf.ransack(params[:q])
+    @cost_pdfs = @search_cost.result(distinct: true)
   end
 
   def new

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index,:edit, :update]
   resources :works
   resources :cliants
-  resources :costs, only: [:index, :new, :create, :edit, :update]
+  resources :costs, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :cost_pdfs, only: [:index, :new, :create, :edit, :update, :destroy] do
     member do
       get 'prawn'

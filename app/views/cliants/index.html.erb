@@ -23,7 +23,13 @@
   </div>
 </nav>
 
+<div class="search-cliant">
 <h1>Cliant list</h1>
+<%= search_form_for @search_cliant do |f| %>
+    <%= f.search_field :cliant_name_cont, class:"search-cliat-name" %>
+    <%= f.submit class:"search-btn-cliant" %>
+<% end %>
+</div>
   <% @cliants.each do |cliant| %>
   <div class="col-sm-4">
         <div class="panel panel-danger">

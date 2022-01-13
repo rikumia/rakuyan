@@ -5,6 +5,8 @@ class CliantsController < ApplicationController
 
   def index
     @cliants = Cliant.where(user_id: current_user.id).order('created_at DESC')
+    @search_cliant = Cliant.ransack(params[:q])
+    @cliants = @search_cliant.result(distinct: true)
   end
 
   def new

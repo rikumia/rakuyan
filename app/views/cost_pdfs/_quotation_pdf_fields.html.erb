@@ -1,0 +1,37 @@
+<div class="nested-fields">
+
+      <td class="td-fixed-spoon">
+        <span class="box-spoon" id='spoon-auto' data-spoon='0'></span>
+      </td>
+      <td class="td-fixed-amount">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="familyName">品名</label>
+            <%= f.text_field :product_name, class:"form-control", placeholder:"必須" %>
+            <label for="familyName">数量</label>
+            <%= f.text_field :quantity, class:"form-control", placeholder:"任意" %>
+            <label for="givenName">単位</label>
+            <%= f.text_field :unit, class:"form-control", placeholder:"任意" %>
+        </div>
+          <div class="col-md-6 mb-3">
+            <label for="givenName">単価</label>
+            <%= f.text_field :unit_price, class:"form-control", placeholder:"任意" %>
+            <label for="givenName">金額</label>
+            <%= f.text_field :money, class:"form-control", id:"money-cost", placeholder:"必須" %>
+            <label for="familyName">備考</label>
+            <%= f.text_field :remarks, class:"form-control", placeholder:"任意" %>
+          </div>
+      </div>
+      </td>
+      <td class="td-fixed-unit">
+        <span class="box-unit" id='unit-auto' data-unit='0'></span>
+      </td>
+      <td class="td-fixed-delete">
+
+        <!-- 削除ボタン -->
+        <%= link_to_remove_association "削除", f %>
+
+      </td>
+    </tr>
+
+</div>

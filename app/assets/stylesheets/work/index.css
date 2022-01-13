@@ -4,6 +4,7 @@
 
 .wrapper{
   display: flex;
+  overflow: scroll;
 }
 
 .chat{
@@ -59,7 +60,7 @@
 .messages {
   height: calc(100vh - 100px);
   padding: 46px 40px 0;
-  overflow: scroll;
+
   color: gray;
 }
 
@@ -81,4 +82,15 @@
 .panel-body{
   display: flex;
   align-items: center;
+}
+
+.main-search{
+  display: flex;
+}
+
+.search-main{
+  margin: 0 0 30px 10px;
+  height: 36px;
+  width: 170px;
+  font-size: 20px;
 }

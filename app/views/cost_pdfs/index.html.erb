@@ -59,6 +59,10 @@
   <div class="container">
     <h1 class="mt-5"></h1>
     <h1>見積書リスト</h1>
+    <%= search_form_for @search_cost do |f| %>
+        <%= f.search_field :cliant_name_cont, class:"search-cliat-name" %>
+        <%= f.submit class:"search-btn-cliant" %>
+    <% end %>
       <% @cost_pdfs.each do |cost_pdf| %>
       <div class="col-sm-4">
         <div class="panel panel-primary">

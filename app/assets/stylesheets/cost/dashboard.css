@@ -90,3 +90,18 @@ body {
   text-decoration: none;
   color: #333;
 }
+
+.search-ifeld{
+  margin-top: 5px;
+  height: 36px;
+  width: 170px;
+}
+
+.search-btn{
+  padding-bottom: 5px;
+}
+
+.body-cost{
+  text-decoration: none;
+  color: #333;
+}
