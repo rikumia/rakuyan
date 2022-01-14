@@ -94,7 +94,7 @@
               <td><%= cost.sales %></td>
               <td><%= cost.cost %></td>
               <td><%= cost.profit %></td>
-              <td><%= link_to cost.profit_rate, cost_path(cost.id), method: :delete, data: {confirm: "削除しますか？"}, class:"body-cost"  %></td>
+              <td><%#= link_to cost.profit_rate, cost_path(cost.id), method: :delete, data: {confirm: "削除しますか？"}, class:"body-cost"  %></td>
             </tr>
           <% end %>
           </tbody>
