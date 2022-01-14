@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2022_01_11_070002) do
     t.integer "sales", null: false
     t.integer "cost", null: false
     t.integer "profit", null: false
-    t.integer "profit_rate", null: false
+    t.integer "profit_was", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_costs_on_user_id"

@@ -44,7 +44,7 @@ class CostsController < ApplicationController
   private
 
   def cost_params
-    params.require(:cost).permit(:cliant_name, :calendar, :sales, :cost, :profit, :profit_rate).merge(user_id: current_user.id)
+    params.require(:cost).permit(:cliant_name, :calendar, :sales, :cost, :profit, :profit_was).merge(user_id: current_user.id)
   end
 
   def set_cost
