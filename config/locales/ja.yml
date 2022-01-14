@@ -23,7 +23,7 @@ ja:
         sales: 売り上げ
         cost: 経費
         profit: 利益
-        profit_rate: 利益率
+        profit_was: 利益率
       cost_pdf:
         company_name: 会社名
         postal_code: 郵便番号
