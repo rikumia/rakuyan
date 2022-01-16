@@ -60,7 +60,7 @@
     <h1 class="mt-5"></h1>
     <h1>見積書リスト</h1>
     <%= search_form_for @search_cost do |f| %>
-        <%= f.search_field :cliant_name_cont, class:"search-cliat-name" %>
+        <%= f.search_field :cliant_name_cont, class:"search-cliat-name", placeholder:"顧客名" %>
         <%= f.submit class:"search-btn-cliant" %>
     <% end %>
       <% @cost_pdfs.each do |cost_pdf| %>

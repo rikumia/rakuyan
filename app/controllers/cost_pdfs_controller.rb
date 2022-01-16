@@ -4,9 +4,9 @@ class CostPdfsController < ApplicationController
   before_action :move_to_index, only: [:edit]
 
   def index
-    @cost_pdfs = CostPdf.where(user_id: current_user.id).order('created_at DESC')
+    @cost_pdfs = CostPdf.where(user_id: current_user.id)
     @search_cost = CostPdf.ransack(params[:q])
-    @cost_pdfs = @search_cost.result(distinct: true)
+    @cost_pdfs = @search_cost.result(distinct: true).order('created_at DESC')
   end
 
   def new
@@ -42,11 +42,11 @@ class CostPdfsController < ApplicationController
   def prawn
     @cost_pdf = CostPdf.find(params[:id])
     # binding.pry
-    @quotation = Quotation.find(params[:id])
+    @quotations = @cost_pdf.quotations.where(cost_pdf_id:params[:id])
     respond_to do |format|
       format.html
       format.pdf do
-        cost_pdf = PracticePdf::CostPdf.new(@cost_pdf, @quotation)
+        cost_pdf = PracticePdf::CostPdf.new(@cost_pdf, @quotations)
         send_data cost_pdf.render,
           filename: 'cost_pdf.pdf',
           type: 'application/pdf',

@@ -95,10 +95,12 @@ body {
   margin-top: 5px;
   height: 36px;
   width: 170px;
+  border-radius: 5px;
 }
 
 .search-btn{
   padding-bottom: 5px;
+  border-radius: 5px;
 }
 
 .body-cost{

@@ -4,12 +4,12 @@ class CostsController < ApplicationController
   before_action :move_to_index, only: [:edit, :show]
 
   def index
-    @costs = Cost.where(user_id: current_user.id).order('created_at DESC')
+    @costs = Cost.where(user_id: current_user.id)
     @cost_by_month = @costs.group_by_month(:calendar).sum(:sales)
     @chartlabels = @cost_by_month.map(&:first).to_json.html_safe
     @chartdatas = @cost_by_month.map(&:second)
     @q = Cost.ransack(params[:q])
-    @costs = @q.result(distinct: true)
+    @costs = @q.result(distinct: true).order('created_at DESC')
   end
 
   def new

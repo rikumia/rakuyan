@@ -114,31 +114,43 @@ module PracticePdf
         move_down 10
         text "¥#{@cost_pdf.total.to_s(:delimited)}- (消費税込)", size: 16, align: :right
       end
-      bounding_box([6.5, 480], width: 510, height: 65) do
-      rows = [[@quotation.product_name]]
-      table(rows, column_widths: [200, 40, 30, 60, 80, 100], position: :center) do |table|
-        table.cells.size = 10
-        table.row(0).align = :center
+      bounding_box([6.5, 500], width: 510, height: 65) do
+      # rows = [["品             名","数   量","単位","単    価","金        額","備         考"],
+      #   @quotation.each do |quotation|
+      #   quotation = [@quotation.product_name]
+      #   end]
+      # table(rows, column_widths: [200, 45, 35, 60, 80, 90], position: :center) do |table|
+      #   table.cells.size = 11
+      #   table.row(0).align = :center
+      # end
+
+
+
+      bounding_box([89, 535], width: 310, height: 65) do
+        move_down 10
+        @quotations.each do |quotation|
+        text  quotation.product_name, size: 16, align: :left
       end
       end
-      bounding_box([70, 496], width: 310, height: 65) do
-        text "品            名", size: 12, align: :left
-      end
-      bounding_box([210, 496], width: 310, height: 65) do
-        text "数   量", size: 12, align: :left
-      end
-      bounding_box([250, 496], width: 310, height: 65) do
-        text "単位", size: 12, align: :left
-      end
-      bounding_box([286, 496], width: 310, height: 65) do
-        text "単    価", size: 12, align: :left
-      end
-      bounding_box([350, 496], width: 310, height: 65) do
-        text "金        額", size: 12, align: :left
-      end
-      bounding_box([435, 496], width: 310, height: 65) do
-        text "備         考", size: 12, align: :left
-      end
+    end
+      # bounding_box([70, 496], width: 310, height: 65) do
+      #   text "品            名", size: 12, align: :left
+      # end
+      # bounding_box([210, 496], width: 310, height: 65) do
+      #   text "数   量", size: 12, align: :left
+      # end
+      # bounding_box([250, 496], width: 310, height: 65) do
+      #   text "単位", size: 12, align: :left
+      # end
+      # bounding_box([286, 496], width: 310, height: 65) do
+      #   text "単    価", size: 12, align: :left
+      # end
+      # bounding_box([350, 496], width: 310, height: 65) do
+      #   text "金        額", size: 12, align: :left
+      # end
+      # bounding_box([435, 496], width: 310, height: 65) do
+      #   text "備         考", size: 12, align: :left
+      # end
       bounding_box([120, 135], width: 310, height: 65) do
         text "小        計", size: 12, align: :left
       end
@@ -162,7 +174,19 @@ module PracticePdf
       end
       bounding_box([10, 63], width: 310, height: 65) do
         text @cost_pdf.memo, size: 12, align: :left
+
       end
+
     end
   end
 end
+# bounding_box([6.5, 480], width: 510, height: 65) do
+#   @quotations.each do |quotation|
+# rows = [[quotation.product_name,@quotation.quantity,@quotation.unit,@quotation.unit_price,@quotation.money.to_s(:delimited),@quotation.remarks]]
+
+# table(rows, column_widths: [200, 40, 30, 60, 80, 100], position: :center) do |table|
+#   table.cells.size = 10
+#   table.row(0).align = :center
+# end
+# end
+# end
