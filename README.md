@@ -105,7 +105,7 @@
 | 実装した機能についての画像や    |
 |  GIFおよびその説明            |
 | 実装予定の機能                | レスポンシブ化がうまくできていないのと、一度入力したところの情報をそのまま持って来れるようにしたいです。|
-| データベース設計              |
-| 画面遷移図                   |
+| データベース設計              | rakuyan.dioにて記載
+| 画面遷移図                   | rakuyan.dioにて記載
 | 開発環境                     | ・フロントエンド: HTML,CSS/javascript/Bootstrap<br>  ・バックエンド: Ruby(ver 2.6.5) / Ruby on Rails(ver 6.0.0)<br>  ・テキストエディタ: Visual Studio Code<br>  ・タスク管理: GitHubプロジェクトボード|
 | ローカルでの動作方法           | 以下、コマンドを順に実行してください。<br>  % git clone https://github.com/rikumia/rakuyan.git <br>   % cd<br>   % bundle install<br>   % yarn install|

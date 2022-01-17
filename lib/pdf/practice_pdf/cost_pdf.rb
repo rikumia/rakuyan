@@ -26,41 +26,19 @@ module PracticePdf
           horizontal_line 33, 300, :at=> 548
           horizontal_line 85, 446, :at=> 507
           horizontal_line 390, 503, :at=> 540
-          horizontal_line 6, 516.5, :at=> 20
-          horizontal_line 6, 516.5, :at=> 500
-          horizontal_line 6, 516.5, :at=> 480
-          horizontal_line 6, 516.5, :at=> 460
-          horizontal_line 6, 516.5, :at=> 440
-          horizontal_line 6, 516.5, :at=> 420
-          horizontal_line 6, 516.5, :at=> 400
-          horizontal_line 6, 516.5, :at=> 380
-          horizontal_line 6, 516.5, :at=> 360
-          horizontal_line 6, 516.5, :at=> 340
-          horizontal_line 6, 516.5, :at=> 320
-          horizontal_line 6, 516.5, :at=> 300
-          horizontal_line 6, 516.5, :at=> 280
-          horizontal_line 6, 516.5, :at=> 260
-          horizontal_line 6, 516.5, :at=> 240
-          horizontal_line 6, 516.5, :at=> 220
-          horizontal_line 6, 516.5, :at=> 200
-          horizontal_line 6, 516.5, :at=> 180
-          horizontal_line 6, 516.5, :at=> 160
-          horizontal_line 6, 516.5, :at=> 140
-          horizontal_line 6, 516.5, :at=> 120
           horizontal_line 6, 516.5, :at=> 100
-          horizontal_line 6, 516.5, :at=> 80
+          horizontal_line 6, 516.5, :at=> 115
+          horizontal_line 6, 516.5, :at=> 68
+          horizontal_line 6, 516.5, :at=> 83
+          horizontal_line 6, 516.5, :at=> 10
         }
         stroke_vertical_line 540, 610, :at => 390
         stroke{
           vertical_line 540, 610, :at => 503
           vertical_line 540, 610, :at => 445
-          vertical_line 20, 500, :at => 6.5
-          vertical_line 140, 500, :at => 206.5
-          vertical_line 140, 500, :at => 246.5
-          vertical_line 140, 500, :at => 276.5
-          vertical_line 80, 500, :at => 336.5
-          vertical_line 80, 500, :at => 416.5
-          vertical_line 20, 500, :at => 516.5
+          vertical_line 10, 115, :at => 516.5
+          vertical_line 10, 115, :at => 6.5
+          vertical_line 68, 115, :at => 300
         }
       font_size = 16
       move_down 55
@@ -114,79 +92,46 @@ module PracticePdf
         move_down 10
         text "¥#{@cost_pdf.total.to_s(:delimited)}- (消費税込)", size: 16, align: :right
       end
-      bounding_box([6.5, 500], width: 510, height: 65) do
-      # rows = [["品             名","数   量","単位","単    価","金        額","備         考"],
-      #   @quotation.each do |quotation|
-      #   quotation = [@quotation.product_name]
-      #   end]
-      # table(rows, column_widths: [200, 45, 35, 60, 80, 90], position: :center) do |table|
-      #   table.cells.size = 11
-      #   table.row(0).align = :center
-      # end
+      move_up 30
+      rows = [["品            名","数   量","単位","単    価","金        額","備         考"]]
 
-
-
-      bounding_box([89, 535], width: 310, height: 65) do
-        move_down 10
-        @quotations.each do |quotation|
-        text  quotation.product_name, size: 16, align: :left
+      table(rows, column_widths: [200, 45, 35, 60, 80, 90], position: :center) do |table|
+        table.cells.size = 11
+        table.row(0).align = :center
       end
+
+      @quotation.each do |quotation|
+      rows = [[quotation.product_name,quotation.quantity,quotation.unit,quotation.unit_price,quotation.money.to_s(:delimited),quotation.remarks]]
+
+      table(rows, column_widths: [200, 45, 35, 60, 80, 90], position: :center) do |table|
+        table.cells.size = 11
+        table.row(0).align = :center
       end
     end
-      # bounding_box([70, 496], width: 310, height: 65) do
-      #   text "品            名", size: 12, align: :left
-      # end
-      # bounding_box([210, 496], width: 310, height: 65) do
-      #   text "数   量", size: 12, align: :left
-      # end
-      # bounding_box([250, 496], width: 310, height: 65) do
-      #   text "単位", size: 12, align: :left
-      # end
-      # bounding_box([286, 496], width: 310, height: 65) do
-      #   text "単    価", size: 12, align: :left
-      # end
-      # bounding_box([350, 496], width: 310, height: 65) do
-      #   text "金        額", size: 12, align: :left
-      # end
-      # bounding_box([435, 496], width: 310, height: 65) do
-      #   text "備         考", size: 12, align: :left
-      # end
-      bounding_box([120, 135], width: 310, height: 65) do
+      bounding_box([120, 113], width: 310, height: 65) do
         text "小        計", size: 12, align: :left
       end
-      bounding_box([100, 135], width: 310, height: 65) do
+      bounding_box([100, 113], width: 310, height: 65) do
         text "#{@cost_pdf.subtotal.to_s(:delimited)}", size: 12, align: :right
       end
-      bounding_box([120, 115], width: 310, height: 65) do
+      bounding_box([120, 96], width: 310, height: 65) do
         text "消 費 税 等 ( 10% )", size: 12, align: :left
       end
-      bounding_box([100, 115], width: 310, height: 65) do
+      bounding_box([100, 96], width: 310, height: 65) do
         text "#{@cost_pdf.tax.to_s(:delimited)}", size: 12, align: :right
       end
-      bounding_box([120, 95], width: 310, height: 65) do
+      bounding_box([120, 80], width: 310, height: 65) do
         text "合        計", size: 12, align: :left
       end
-      bounding_box([100, 95], width: 310, height: 65) do
+      bounding_box([100, 80], width: 310, height: 65) do
         text "#{@cost_pdf.total.to_s(:delimited)}", size: 12, align: :right
       end
-      bounding_box([10, 75], width: 310, height: 65) do
+      bounding_box([10, 60], width: 310, height: 65) do
         text "備  考:", size: 12, align: :left
       end
-      bounding_box([10, 63], width: 310, height: 65) do
+      bounding_box([50, 60], width: 310, height: 65) do
         text @cost_pdf.memo, size: 12, align: :left
-
       end
-
     end
   end
 end
-# bounding_box([6.5, 480], width: 510, height: 65) do
-#   @quotations.each do |quotation|
-# rows = [[quotation.product_name,@quotation.quantity,@quotation.unit,@quotation.unit_price,@quotation.money.to_s(:delimited),@quotation.remarks]]
-
-# table(rows, column_widths: [200, 40, 30, 60, 80, 100], position: :center) do |table|
-#   table.cells.size = 10
-#   table.row(0).align = :center
-# end
-# end
-# end
