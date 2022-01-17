@@ -1,15 +1,5 @@
 window.addEventListener('load', () =>  {
 
-
-  // $(function(){
-
-  //   var frm_cnt = 0;
-  //   frm_cnt++;
-  //   $('#money-cost').each(function(i){
-  //     $(this).attr('id', 'money-cost[' + frm_cnt + ']')
-  //   });
-  // });
-
   const moneyInput = document.getElementById("money-cost");
       const subtotalOutput = document.getElementById("subtotal-cost");
       const taxOutput = document.getElementById("tax-cost")

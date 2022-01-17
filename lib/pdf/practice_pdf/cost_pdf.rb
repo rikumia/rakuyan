@@ -26,10 +26,10 @@ module PracticePdf
           horizontal_line 33, 300, :at=> 548
           horizontal_line 85, 446, :at=> 507
           horizontal_line 390, 503, :at=> 540
-          horizontal_line 6, 516.5, :at=> 100
+          horizontal_line 6, 415, :at=> 100
           horizontal_line 6, 516.5, :at=> 115
           horizontal_line 6, 516.5, :at=> 68
-          horizontal_line 6, 516.5, :at=> 83
+          horizontal_line 6, 415, :at=> 83
           horizontal_line 6, 516.5, :at=> 10
         }
         stroke_vertical_line 540, 610, :at => 390
@@ -39,6 +39,7 @@ module PracticePdf
           vertical_line 10, 115, :at => 516.5
           vertical_line 10, 115, :at => 6.5
           vertical_line 68, 115, :at => 300
+          vertical_line 68, 115, :at => 415
         }
       font_size = 16
       move_down 55
@@ -94,15 +95,12 @@ module PracticePdf
       end
       move_up 30
       rows = [["品            名","数   量","単位","単    価","金        額","備         考"]]
-
       table(rows, column_widths: [200, 45, 35, 60, 80, 90], position: :center) do |table|
         table.cells.size = 11
         table.row(0).align = :center
       end
-
       @quotation.each do |quotation|
       rows = [[quotation.product_name,quotation.quantity,quotation.unit,quotation.unit_price,quotation.money.to_s(:delimited),quotation.remarks]]
-
       table(rows, column_widths: [200, 45, 35, 60, 80, 90], position: :center) do |table|
         table.cells.size = 11
         table.row(0).align = :center
@@ -129,7 +127,7 @@ module PracticePdf
       bounding_box([10, 60], width: 310, height: 65) do
         text "備  考:", size: 12, align: :left
       end
-      bounding_box([50, 60], width: 310, height: 65) do
+      bounding_box([50, 61], width: 310, height: 65) do
         text @cost_pdf.memo, size: 12, align: :left
       end
     end

@@ -4,9 +4,9 @@ class CliantsController < ApplicationController
   before_action :move_to_index, only: [:edit, :show]
 
   def index
-    @cliants = Cliant.where(user_id: current_user.id)
+    @cliants = Cliant.all
     @search_cliant = Cliant.ransack(params[:q])
-    @cliants = @search_cliant.result(distinct: true).order('created_at DESC')
+    @cliants = @search_cliant.result(distinct: true).where(user_id: current_user.id).order('created_at DESC')
   end
 
   def new

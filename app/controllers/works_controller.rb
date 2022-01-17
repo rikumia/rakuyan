@@ -4,9 +4,9 @@ class WorksController < ApplicationController
   before_action :move_to_index, only: [:edit, :show]
 
   def index
-    @works = Work.where(user_id: current_user.id)
+    @works = Work.all
     @search = Work.ransack(params[:q])
-    @works = @search.result(distinct: true).order('created_at DESC')
+    @works = @search.result(distinct: true).where(user_id: current_user.id).order('created_at DESC')
   end
 
   def new
