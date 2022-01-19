@@ -4,6 +4,8 @@
 
 main > .container {
   padding: 60px 15px 0;
+  margin-top: 100px;
+  margin-right: 200px;
 }
 
 .navbar-dark .navbar-brand{
