@@ -5,9 +5,14 @@
         <h2>新規登録</h2>
         <form class="form" id="form1">
         <p class="cliant_name">
-            <%= f.text_field :cliant_name, class:"feedback-input", placeholder:"顧客名", id:"name" %>
+         <%= f.text_field :cliant_name, class:"feedback-input", placeholder:"顧客名", list:"kenpo" %>
+            <datalist id="kenpo">
+            <option value="">顧客</option>
+            <% Work.where(user_id: current_user.id).each do |work| %>
+                <option><%= work.cliant_name %></option>
+            <% end %>
+            </datalist>
         </p>
-
         <p class="job_description">
             <%= f.text_field :job_description, class:"feedback-input", placeholder:"仕事内容", id:"job_description" %>
         </p>

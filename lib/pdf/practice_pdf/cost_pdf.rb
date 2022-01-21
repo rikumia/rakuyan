@@ -27,19 +27,18 @@ module PracticePdf
           horizontal_line 85, 446, :at=> 507
           horizontal_line 390, 503, :at=> 540
           horizontal_line 6, 415, :at=> 100
-          horizontal_line 6, 516.5, :at=> 115
-          horizontal_line 6, 516.5, :at=> 68
+          horizontal_line 6, 415, :at=> 115
+          horizontal_line 6, 415, :at=> 68
           horizontal_line 6, 415, :at=> 83
-          horizontal_line 6, 516.5, :at=> 10
+          horizontal_line 6, 415, :at=> 10
         }
         stroke_vertical_line 540, 610, :at => 390
         stroke{
           vertical_line 540, 610, :at => 503
           vertical_line 540, 610, :at => 445
-          vertical_line 10, 115, :at => 516.5
           vertical_line 10, 115, :at => 6.5
           vertical_line 68, 115, :at => 300
-          vertical_line 68, 115, :at => 415
+          vertical_line 10, 115, :at => 415
         }
       font_size = 16
       move_down 55
