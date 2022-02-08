@@ -1,18 +1,18 @@
-// window.addEventListener('load', () =>  {
+window.addEventListener('load', () =>  {
 
-//   const moneyInput = document.getElementById("money-cost");
-//       const subtotalOutput = document.getElementById("subtotal-cost");
-//       const taxOutput = document.getElementById("tax-cost")
-//       const totalOutput = document.getElementById("total-cost");
-//       moneyInput.addEventListener("input", () => {
-//         subtotalOutput.value = moneyInput.value;
-//         const taxValue = Math.floor(subtotalOutput.value * 0.1);
-//         taxOutput.value = taxValue;
-//         const value_result = subtotalOutput.value;
-//         const totalNumber = (Math.floor(parseInt(taxValue) + parseInt(value_result)));
-//         totalOutput.value = totalNumber;
-//       })
-//     });
+  const moneyInput = document.getElementById("money-cost");
+      const subtotalOutput = document.getElementById("subtotal-cost");
+      const taxOutput = document.getElementById("tax-cost")
+      const totalOutput = document.getElementById("total-cost");
+      moneyInput.addEventListener("input", () => {
+        subtotalOutput.value = moneyInput.value;
+        const taxValue = Math.floor(subtotalOutput.value * 0.1);
+        taxOutput.value = taxValue;
+        const value_result = subtotalOutput.value;
+        const totalNumber = (Math.floor(parseInt(taxValue) + parseInt(value_result)));
+        totalOutput.value = totalNumber;
+      })
+    });
 
 
 
